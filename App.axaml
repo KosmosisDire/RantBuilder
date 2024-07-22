@@ -1,0 +1,99 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RantBuilder.App"
+             RequestedThemeVariant="Dark">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        <!-- <FluentTheme /> -->
+        <SimpleTheme />
+
+        <Style Selector="Canvas.Node > Grid">
+
+            <Style Selector="^ > Border.NodeBackground">
+                <Setter Property="Background" Value="{DynamicResource NodeSurface}"/>
+                <Setter Property="CornerRadius" Value="{DynamicResource NodeRadius}"/>
+                <Setter Property="BoxShadow" Value="0 0 20 0 #88000000"/>
+            </Style>
+
+            <Style Selector="^ > Border.NodeOutline">
+                <Setter Property="BorderBrush" Value="{DynamicResource Border}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="CornerRadius" Value="{DynamicResource NodeRadius}"/>
+            </Style>
+
+            <Style Selector="^.Hover Border.NodeOutline">
+                <Setter Property="BorderBrush" Value="{DynamicResource BorderHover}"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style>
+
+            <Style Selector="^ Panel.Divider">
+                <Setter Property="Background" Value="{DynamicResource Border}"/>
+                <Setter Property="Height" Value="5"/>
+                <Setter Property="Margin" Value="0 0 0 0"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            </Style>
+        </Style>
+
+        <Style Selector="Canvas.Node.NodeGroup > Grid">
+
+            <Style Selector="^ > Border.NodeBackground">
+                <Setter Property="Background" Value="{DynamicResource NodeGroupSurface1}"/>
+            </Style>
+
+            <Style Selector="^ > Border.NodeOutline">
+                <Setter Property="BorderBrush" Value="{DynamicResource NodeGroupBorder1}"/>
+            </Style>
+
+            <Style Selector="^ > Panel.Divider">
+                <Setter Property="Background" Value="{DynamicResource NodeGroupBorder1}"/>
+            </Style>
+
+            <Style Selector="^ > Grid > StackPanel.PropertyDock">
+                <Setter Property="IsVisible" Value="False"/>
+            </Style>
+        </Style>
+
+        <Style Selector=".NodePropertyPoint">
+            <Style Selector="^ > Border">
+                <Setter Property="BorderBrush" Value="{DynamicResource ConnectorColor}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Background" Value="{DynamicResource Clear}"/>
+            </Style>
+
+            <Style Selector="^.Hover">
+                <Style Selector="^ > Border">
+                    <Setter Property="BorderThickness" Value="2"/>
+                </Style>
+            </Style>
+
+            <Style Selector="^.Connected">
+                <Style Selector="^ > Border">
+                    <Setter Property="Background" Value="{DynamicResource NodeGroupBorder1}"/>
+                </Style>
+            </Style>
+        </Style>
+
+
+
+
+    </Application.Styles>
+
+    <Application.Resources>
+        <SolidColorBrush x:Key="Base">#FF212121</SolidColorBrush>
+        <SolidColorBrush x:Key="Surface">#FF313131</SolidColorBrush>
+        <SolidColorBrush x:Key="Accent">#FF0078d4</SolidColorBrush>
+        <SolidColorBrush x:Key="Border">#77000000</SolidColorBrush>
+        <SolidColorBrush x:Key="BorderHover">#FF0078d4</SolidColorBrush>
+        <SolidColorBrush x:Key="Clear">#00000000</SolidColorBrush>
+
+        <SolidColorBrush x:Key="NodeGroupSurface1">#220c3329</SolidColorBrush>
+        <SolidColorBrush x:Key="NodeGroupBorder1">#403ebba4</SolidColorBrush>
+        <SolidColorBrush x:Key="NodeSurface">#88414141</SolidColorBrush>
+        <SolidColorBrush x:Key="NodePanelSurface">#88212121</SolidColorBrush>
+        <SolidColorBrush x:Key="ConnectorColor">#FF8cdcfe</SolidColorBrush>
+        <SolidColorBrush x:Key="SplineColor">#FF8cdcfe</SolidColorBrush>
+        <CornerRadius x:Key="NodeRadius">6 4</CornerRadius>
+
+    </Application.Resources>
+</Application>
